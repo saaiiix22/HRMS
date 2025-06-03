@@ -1,15 +1,9 @@
-import React, { useEffect } from 'react'
-import Sidebar from '../../components/sidebar/Sidebar'
-import { Outlet } from 'react-router-dom'
-import Navbar from '../../components/nav/Navbar'
+import React from 'react'
 import IntroCard from '../../components/introCard/IntroCard'
 import QuickNotes from '../../components/quickNotes/QuickNotes'
 import EventCarousel from "../../components/eventCarousel/EventCarousel";
 import CardContainer from '../../components/cardContainer/CardContainer'
 import MoneyProjection from '../../components/money/MoneyProjection'
-
-import { useDispatch, useSelector } from 'react-redux'
-import getData from '../../actions/getUserDetailsaction'
 
 const Dashboard = () => {
   
