@@ -15,16 +15,16 @@ createRoot(document.getElementById('root')).render(
       <App />
       <AnimatedCursor
         innerSize={10}
-        outerSize={17}
+        outerSize={20}
         color='234, 179, 8'
         outerAlpha={.5}
         innerScale={1}
         outerScale={2}
         innerStyle={{
-          backgroundColor: '#ef4444',
+          backgroundColor: '#fac11a',
         }}
         outerStyle={{
-          backgroundColor: 'rgb(239 68 68 / 58%)',
+          backgroundColor: '#129cdbab',
         }}
         clickables={[
           'input[type="text"]',

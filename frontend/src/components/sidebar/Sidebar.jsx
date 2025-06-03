@@ -9,7 +9,6 @@ import { FaPowerOff } from "react-icons/fa";
 import { NavLink, useNavigate } from 'react-router-dom';
 import { logoutFunction } from '../../api/ApiCall';
 import { useSelector } from 'react-redux';
-import { MdOutlineDashboard } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 
 
