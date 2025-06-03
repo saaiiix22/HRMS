@@ -30,7 +30,6 @@ const Dashboard = () => {
           <div className="grid grid-cols-12 gap-3">
               <div className="col-span-12">
                 <EventCarousel/>   
-                <div>Hello</div>             
                 <CardContainer/>
                 <MoneyProjection/>
               </div>
