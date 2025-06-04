@@ -7,6 +7,7 @@ import Login from './pages/login/Login'
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute'
 import ErrorPage from './pages/ERROR_PAGE/ErrorPage'
 import RegularizationRequest from './pages/regularizationRequest/RegularizationRequest'
+import AssetsAllotted from './pages/assetAllotment/AssetsAllotted'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -43,6 +44,13 @@ const App = () => {
           element:
             <ProtectedRoute>
               <RegularizationRequest />
+            </ProtectedRoute>
+        },
+        {
+          path: '/assetsallottedtome',
+          element:
+            <ProtectedRoute>
+              <AssetsAllotted/>
             </ProtectedRoute>
         }
       ]
