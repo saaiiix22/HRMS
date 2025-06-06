@@ -59,8 +59,8 @@ const EventCarousel = () => {
                                         <h4 className="text-white text-xl md:text-2xl font-medium">
                                             Warm wishes on the occasion of your Birthday!
                                         </h4>
-                                        <div className="w-1/2">
-                                            <span className='block text-[12px] text-yellow-100 font-normal'>
+                                        <div className="w-2/3">
+                                            <span className='block text-[14px] text-yellow-100 font-normal'>
                                                 May your birthday be the start of a year filled with good luck, good health and much happiness & we hope that you have a great year and accomplish all the fabulous goals you have set.
                                             </span>
                                         </div>
@@ -71,8 +71,8 @@ const EventCarousel = () => {
                                         <h4 className="text-white text-xl md:text-2xl font-medium">
                                             Congratulations on your Work Anniversary!
                                         </h4>
-                                        <div className="w-1/2">
-                                            <span className='block text-[12px] text-yellow-100 font-normal'>
+                                        <div className="w-2/3">
+                                            <span className='block text-[14px] text-yellow-100 font-normal'>
                                                 May this milestone be a reminder of the dedication, hard work, and excellence you bring to your role each day. Here's to continued success, new opportunities, and many more achievements in the years ahead. We’re proud to have you as part of the team—cheers to your journey and all the goals yet to come!
                                             </span>
                                         </div>

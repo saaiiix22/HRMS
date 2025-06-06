@@ -8,6 +8,7 @@ import ProtectedRoute from './components/protectedRoute/ProtectedRoute'
 import ErrorPage from './pages/ERROR_PAGE/ErrorPage'
 import RegularizationRequest from './pages/regularizationRequest/RegularizationRequest'
 import AssetsAllotted from './pages/assetAllotment/AssetsAllotted'
+import ViewMonthlyAttendance from './pages/viewMonthlyAttendance/ViewMonthlyAttendance'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -50,7 +51,14 @@ const App = () => {
           path: '/assetsallottedtome',
           element:
             <ProtectedRoute>
-              <AssetsAllotted/>
+              <AssetsAllotted />
+            </ProtectedRoute>
+        },
+        {
+          path: '/biometricattendance',
+          element:
+            <ProtectedRoute>
+              <ViewMonthlyAttendance/>
             </ProtectedRoute>
         }
       ]

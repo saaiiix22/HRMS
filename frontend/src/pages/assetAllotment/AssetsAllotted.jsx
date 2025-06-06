@@ -7,16 +7,16 @@ const AssetsAllotted = () => {
                 <table className='min-w-full text-sm text-left border-collapse'>
                     <thead className="text-gray-600 uppercase text-xs border">
                         <tr>
-                            <th className="px-4 py-2">Sl no.</th>
-                            <th className="px-4 py-2">Asset Type</th>
-                            <th className="px-4 py-2">Asset Branch</th>
-                            <th className="px-4 py-2">Asset Model</th>
-                            <th className="px-4 py-2">Asset Serial No.</th>
-                            <th className="px-4 py-2">Allotted By</th>
-                            <th className="px-4 py-2">Allotted On</th>
-                            <th className="px-4 py-2">Current Status</th>
-                            <th className="px-4 py-2">Surrendered To</th>
-                            <th className="px-4 py-2">Action</th>
+                            <th className="px-4 py-2 border border-solid">Sl no.</th>
+                            <th className="px-4 py-2 border border-solid">Asset Type</th>
+                            <th className="px-4 py-2 border border-solid">Asset Branch</th>
+                            <th className="px-4 py-2 border border-solid">Asset Model</th>
+                            <th className="px-4 py-2 border border-solid">Asset Serial No.</th>
+                            <th className="px-4 py-2 border border-solid">Allotted By</th>
+                            <th className="px-4 py-2 border border-solid">Allotted On</th>
+                            <th className="px-4 py-2 border border-solid">Current Status</th>
+                            <th className="px-4 py-2 border border-solid">Surrendered To</th>
+                            <th className="px-4 py-2 border border-solid">Action</th>
                         </tr>
                     </thead>
                 </table>
