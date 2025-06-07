@@ -9,6 +9,7 @@ import ErrorPage from './pages/ERROR_PAGE/ErrorPage'
 import RegularizationRequest from './pages/regularizationRequest/RegularizationRequest'
 import AssetsAllotted from './pages/assetAllotment/AssetsAllotted'
 import ViewMonthlyAttendance from './pages/viewMonthlyAttendance/ViewMonthlyAttendance'
+import LeaveApplication from './pages/leaveApplication/LeaveApplication'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -60,6 +61,13 @@ const App = () => {
             <ProtectedRoute>
               <ViewMonthlyAttendance/>
             </ProtectedRoute>
+        },
+        {
+          path:'/leaveapplication',
+          element:
+          <ProtectedRoute>
+            <LeaveApplication/>
+          </ProtectedRoute>
         }
       ]
     }
