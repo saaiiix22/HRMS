@@ -109,7 +109,7 @@ empRouter.put('/updateDetails', verifyToken, async (req, res) => {
 empRouter.get('/officeEvent', async (req, res) => {
     try {
         const employees = await empModel.find(
-            {},{ birthDate: 1, joiningDate: 1, employeeName: 1, _id: 0 }
+            {status:'ACTIVE'},{ birthDate: 1, joiningDate: 1, employeeName: 1, _id: 0 }
         );
 
         const today = new Date();
