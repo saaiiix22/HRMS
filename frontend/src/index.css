@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background-color: #e4eaff;
+}
+.tableItemsHead{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: start;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.login-container::before,
+.login-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.login-container::before {
+  width: 400px;
+  height: 400px;
+  background: #1b286a;
+  top: -100px;
+  left: -100px;
+}
+
+.login-container::after {
+  width: 400px;
+  height: 400px;
+  background: #0e1247;
+  bottom: -80px;
+  right:  -80px;
+}
+
+.shape1,
+.shape2{
+  position: absolute;
+  z-index: 0;
+  opacity: 0.2;
+  border-radius: 50%;
+}
+
+.shape1 {
+  width: 200px;
+  height: 200px;
+  background: #ffffff23;
+  top: 10%;
+  right: 20%;
+}
+
+.shape2 {
+  width: 150px;
+  height: 150px;
+  background: #00bbd459;
+  bottom: 20%;
+  left: 15%;
+}
+
+
+
