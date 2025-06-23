@@ -8,11 +8,6 @@ import { RxDragHandleDots2 } from 'react-icons/rx';
 import DatePicker from 'react-datepicker';
 
 const LeaveApplication = () => {
-  const leaveFormConfig = [
-    {
-      
-    }
-  ]
   return (
     <div className='mt-3 rounded-md'>
       <div>
