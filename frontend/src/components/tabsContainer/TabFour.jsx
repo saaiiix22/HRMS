@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { MdOutlineAddCircle } from 'react-icons/md';
 import { updatedEducation } from '../../api/ApiCall';
+import { toast } from 'react-toastify';
 
 const TabFour = () => {
   const empEducationSelector = useSelector(state => state.userDetails.userDetails);
@@ -81,6 +82,7 @@ const TabFour = () => {
     try {
       const res = await updatedEducation(educationRows)
       console.log(res); 
+      toast.success('Updated Successfully');
     } catch (error) {
       console.log(error);
     }

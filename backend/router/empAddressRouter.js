@@ -17,6 +17,7 @@ empAddressRouter.get('/allAdd', async(req,res)=>{
     }
 })
 
+// ! SEE SPECIFIC ADDRESS
 empAddressRouter.get('/seeaddress', verifyToken,async(req,res)=>{
     const user = req.user
     try {
@@ -37,8 +38,12 @@ empAddressRouter.get('/seeaddress', verifyToken,async(req,res)=>{
 })
 empAddressRouter.post('/updateAddress',verifyToken,async(req,res)=>{
     const user = req.user
+    const {
+
+    } = req.body
     try {
-        const updateAddress = await empAddressModel.findOneAndUpdate({},{})
+        const getEmpAddress = await empAddressModel.findOne({employeeCode:user.userMaster.loginId})
+
     } catch (error) {
         
     }

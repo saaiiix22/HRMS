@@ -74,8 +74,13 @@ const LeaveApplication = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-              malesuada lacus ex, sit amet blandit leo lobortis eget.
+              <table className=''>
+                <thead>
+                  <tr>
+                    td*
+                  </tr>
+                </thead>
+              </table>
             </Typography>
           </AccordionDetails>
         </Accordion>

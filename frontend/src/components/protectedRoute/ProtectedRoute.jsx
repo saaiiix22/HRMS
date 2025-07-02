@@ -1,33 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
-const ProtectedRoute = ({children}) => {
-    const token = localStorage.getItem('token')
-    return token?children:<Navigate to='/login' replace/>
+const ProtectedRoute = ({ children }) => {
+  const [tokenExists, setTokenExists] = useState(!!localStorage.getItem('token'));
 
-    
-    // const [isAuthenticated, setIsAuthenticated] = useState(null); // null = loading
-    // const [loading, setLoading] = useState(true);
-  
-    // useEffect (() => {
-    //   const checkAuth = async () => {
-    //     try {
-    //       await specificUserInfo(); // Uses cookie automatically via `withCredentials`
-    //       setIsAuthenticated(true);
-    //     } catch (error) {
-    //       setIsAuthenticated(false);
-    //     } finally {
-    //       setLoading(false);
-    //     }
-    //   };
-  
-    //   checkAuth();
-    // }, []);
-  
-    // if (loading) return <div className="text-white text-center p-4">Checking authentication...</div>;
-  
-    // return isAuthenticated ? children : <Navigate to="/login" replace />;
-  };
-  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      localStorage.removeItem('token');
+      setTokenExists(false);
+    }, 3600000); 
 
-export default ProtectedRoute
+    return () => clearInterval(interval); 
+  }, []);
+
+  if (!tokenExists) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
+export default ProtectedRoute;

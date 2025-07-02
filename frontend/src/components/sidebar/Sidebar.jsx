@@ -93,7 +93,7 @@ const Sidebar = () => {
     return (
         <aside className='md:w-1/6 py-5 h-full bg-white fixed'>
             <div className='p-10'>
-                <img src={aashditLogo} alt="Logo" className='m-auto' width={'85%'} />
+                <img src={aashditLogo} alt="Logo" className='m-auto' width={'85%'} onClick={()=>navigate('/')} />
             </div>
 
             <div className='mt-3 h-[86%] bg-white flex flex-col justify-between'>

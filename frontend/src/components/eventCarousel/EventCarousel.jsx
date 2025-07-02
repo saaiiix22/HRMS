@@ -5,6 +5,7 @@ import eventBanner from '../../assets/eventBanner.png'
 import birthdayCard from '../../assets/birthday.webp'
 import { useQuery } from '@tanstack/react-query'
 import { eventAtOffice } from '../../api/ApiCall';
+import ReactConfetti from 'react-confetti'
 
 const EventCarousel = () => {
     const responsive = {
@@ -35,6 +36,7 @@ const EventCarousel = () => {
 
     return (
         <div className="w-full">
+            {/* <ReactConfetti/> */}
             <Carousel responsive={responsive} infinite={events.length > 1 ? true : false} autoPlay>
                 {events.map((i, index) => {
                     return (
