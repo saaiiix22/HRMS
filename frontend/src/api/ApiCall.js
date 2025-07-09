@@ -116,3 +116,13 @@ export const eventAtOffice =async()=>{
         throw error       
     }
 }
+// ! UPDATE ADDRESS
+
+export const updateAddress = async(payload)=>{
+    try {
+        const res = await Api.post('/address/updateAddress', payload)
+        return res.data;
+    } catch (error) {
+        throw error
+    }
+}

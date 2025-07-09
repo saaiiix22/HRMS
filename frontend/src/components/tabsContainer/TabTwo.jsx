@@ -2,7 +2,8 @@ import React, { useMemo } from 'react';
 import { useFormik } from 'formik';
 import { RxDragHandleDots2 } from 'react-icons/rx';
 import { useQuery } from '@tanstack/react-query';
-import { getAddress } from '../../api/ApiCall';
+import { getAddress, updateAddress } from '../../api/ApiCall';
+import { toast } from 'react-toastify';
 
 const TabTwo = () => {
   const tabTwoFieldConfigs = [
@@ -27,8 +28,7 @@ const TabTwo = () => {
     queryFn: getAddress,
     staleTime: 10000,
   });
-  console.log(data);
-  
+
 
   const initialValues = useMemo(() => {
     const emp = data?.empAddress || {};
@@ -55,7 +55,31 @@ const TabTwo = () => {
   const bankForm = useFormik({
     initialValues,
     enableReinitialize: true,
-    onSubmit: values => console.log(values),
+    // onSubmit: values => console.log(values),
+    onSubmit: async (values) => {
+      const payload = {
+        presentAddress: values.presentAddress,
+        presentCity: values.presentCity,
+        presentPincode: values.presentPincode,
+        presentDistrict: values.presentDistrict,
+        presentState: values.presentState,
+        permanentAddress: values.permanentAddress,
+        permanentCity: values.permanentCity,
+        permanentPincode: values.permanentPincode,
+        permanentDistrict: values.permanentDistrict,
+        permanentState: values.permanentState
+      };
+
+      try {
+        const response = await updateAddress(payload);
+        console.log('Address updated:', response);
+        toast.success(response.message)
+      } catch (err) {
+        console.log('Address update failed:', err);
+        toast.success(response.message)
+      }
+    }
+
   });
 
   const renderFields = (fields, prefix = '') =>
@@ -64,11 +88,10 @@ const TabTwo = () => {
       return (
         <div
           key={fieldName}
-          className={`${
-            field.type === 'textarea'
-              ? 'col-span-12 md:col-span-8'
-              : 'col-span-12 md:col-span-4'
-          } flex flex-col md:flex-row gap-2 md:gap-4`}
+          className={`${field.type === 'textarea'
+            ? 'col-span-12 md:col-span-8'
+            : 'col-span-12 md:col-span-4'
+            } flex flex-col md:flex-row gap-2 md:gap-4`}
         >
           <label
             htmlFor={fieldName}
@@ -100,7 +123,7 @@ const TabTwo = () => {
       );
     });
 
-  
+
 
   return (
     <div className="bg-white p-2">
