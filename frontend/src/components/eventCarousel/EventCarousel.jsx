@@ -22,7 +22,7 @@ const EventCarousel = () => {
     });
 
     const events = data?.data ?? [];
-    console.log(events);
+    // console.log(events);
 
 
     const checkEvent = (dateStr) => {

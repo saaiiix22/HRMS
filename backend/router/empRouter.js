@@ -1,15 +1,13 @@
 const express = require('express')
 const empModel = require('../model/empModel')
-
 const empRouter = express.Router()
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const blacklistedTokens = new Set();
 const verifyToken = require('../middleware/jwt')
 const empEducationModel = require('../model/educationModel')
 const empDesignationModel = require('../model/empDesignationModel')
 const menuRolesModel = require('../model/menuRolesModel')
-const blacklistToken = require('../middleware/blackListToken')
+const { blacklistToken } = require('../middleware/blackListToken')
 
 // ! login 
 empRouter.post('/login', async (req, res) => {
@@ -37,19 +35,16 @@ empRouter.post('/login', async (req, res) => {
 });
 
 // ! LOGOUT
-empRouter.post('/logout', async (req, res) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-    try {
-        if (!token) {
-            return res.status(400).json({ logout: false, message: 'No token provided' });
-        }
-        blacklistedTokens.add(token);
-        return res.status(200).json({ logout: true, message: 'Logged out successfully' });
-    } catch (error) {
-        return res.status(500).json({message:"INTERNAL SERVER ERROR"})
+empRouter.post('/logout', (req, res) => {
+    const token = req.headers.authorization?.split(' ')[1];
+
+    if (!token) {
+        return res.status(400).json({ message: 'No token provided' });
     }
-})
+    blacklistToken(token);
+    return res.status(200).json({ message: 'Logout successful' });
+});
+
 
 
 //  ! GET LOGGED IN PERSON DETAILS

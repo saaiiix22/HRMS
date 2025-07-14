@@ -32,7 +32,7 @@ const IntroCard = () => {
     return (
         <div>
             <div className='p-9 bg-[#0B97D9] flex justify-around items-center relative rounded-t-md gap-3' style={{ backgroundImage: `url(${profileBg})` }}>
-                <img src='https://upload.wikimedia.org/wikipedia/en/d/dc/MichaelScott.png' alt="" width={'120'} className='bg-slate-100 rounded-full' />
+                <img src={profileImg} alt="" width={'120'} className='bg-slate-100 rounded-full' />
                 <h2 className='text-[25px] text-white font-semibold'>{employeeName}
                     <span className='block text-[12px]'>{employeeCode}</span>
                 </h2>

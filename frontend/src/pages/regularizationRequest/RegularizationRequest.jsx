@@ -44,7 +44,6 @@ const RegularizationRequest = () => {
                     dateFormat="yyyy"
                     className="w-full border border-slate-300 rounded px-3 py-[4px] bg-slate-100 text-sm"
                     placeholderText="Year"
-                    readOnly
                 />
             );
         }
@@ -58,7 +57,6 @@ const RegularizationRequest = () => {
                     dateFormat="MM/yyyy"
                     className="w-full border border-slate-300 rounded px-3 py-[4px] bg-slate-100 text-sm"
                     placeholderText="mm/yyyy"
-                    readOnly
                 />
             );
         }
@@ -72,7 +70,6 @@ const RegularizationRequest = () => {
                     className="w-full border border-slate-300 rounded px-3 py-[4px] bg-slate-100 text-sm"
                     placeholderText="dd/mm/yyyy"
                     maxDate={field.maxDate}
-                    readOnly
                 />
             );
         }

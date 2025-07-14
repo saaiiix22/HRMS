@@ -15,11 +15,7 @@ export const loginApi = async (creds) => {
 // ! LOGOUT
 export const logoutFunction = async () => {
     try {
-        const res = await Api.post('/logout', {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-            }
-        })
+        const res = await Api.post('/logout')
         return res
     } catch (error) {
         throw error
