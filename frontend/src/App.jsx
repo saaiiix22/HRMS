@@ -10,6 +10,7 @@ import RegularizationRequest from './pages/regularizationRequest/RegularizationR
 import AssetsAllotted from './pages/assetAllotment/AssetsAllotted'
 import ViewMonthlyAttendance from './pages/viewMonthlyAttendance/ViewMonthlyAttendance'
 import LeaveApplication from './pages/leaveApplication/LeaveApplication'
+import PlaceOrderLunch from './pages/placeLunchOrder/PlaceOrderLunch'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -67,6 +68,13 @@ const App = () => {
           element:
           <ProtectedRoute>
             <LeaveApplication/>
+          </ProtectedRoute>
+        },
+        {
+          path:'/placelunchorder',
+          element:
+          <ProtectedRoute>
+            <PlaceOrderLunch/>
           </ProtectedRoute>
         }
       ]
