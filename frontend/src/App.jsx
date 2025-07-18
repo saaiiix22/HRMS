@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Dashboard from './pages/dashboard/Dashboard'
 import Root from './Root'
@@ -60,26 +60,36 @@ const App = () => {
           path: '/biometricattendance',
           element:
             <ProtectedRoute>
-              <ViewMonthlyAttendance/>
+              <ViewMonthlyAttendance />
             </ProtectedRoute>
         },
         {
-          path:'/leaveapplication',
+          path: '/leaveapplication',
           element:
-          <ProtectedRoute>
-            <LeaveApplication/>
-          </ProtectedRoute>
+            <ProtectedRoute>
+              <LeaveApplication />
+            </ProtectedRoute>
         },
         {
-          path:'/placelunchorder',
+          path: '/placelunchorder',
           element:
-          <ProtectedRoute>
-            <PlaceOrderLunch/>
-          </ProtectedRoute>
+            <ProtectedRoute>
+              <PlaceOrderLunch />
+            </ProtectedRoute>
         }
       ]
     }
   ])
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+    };
+    document.addEventListener("contextmenu", handleContextMenu);
+    return () => {
+      document.removeEventListener("contextmenu", handleContextMenu);
+    };
+  }, []);
+
   return (
     <div className='bg-[#E4EAFF] h-[100vh] overflow-x-hidden'>
       <RouterProvider router={router} />
