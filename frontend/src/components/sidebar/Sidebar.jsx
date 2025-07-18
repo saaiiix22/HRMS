@@ -102,7 +102,7 @@ const Sidebar = () => {
     };
 
     return (
-        <aside className='md:w-1/6 py-5 h-full bg-white fixed'>
+        <aside className='md:w-1/6 py-5 h-full bg-white fixed scroll-container'>
             <div className='p-10'>
                 <img src={aashditLogo} alt="Logo" className='m-auto' width={'85%'} onClick={()=>navigate('/')} />
             </div>

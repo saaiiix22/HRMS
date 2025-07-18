@@ -65,6 +65,15 @@ body{
   bottom: 20%;
   left: 15%;
 }
+.scroll-container {
+  overflow: auto; 
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
 
 
 
