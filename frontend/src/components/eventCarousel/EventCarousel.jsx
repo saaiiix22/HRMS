@@ -5,7 +5,6 @@ import eventBanner from '../../assets/eventBanner.png'
 import birthdayCard from '../../assets/birthday.webp'
 import { useQuery } from '@tanstack/react-query'
 import { eventAtOffice } from '../../api/ApiCall';
-import ReactConfetti from 'react-confetti'
 
 const EventCarousel = () => {
     const responsive = {
