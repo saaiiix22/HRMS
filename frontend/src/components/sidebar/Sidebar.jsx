@@ -16,13 +16,7 @@ const Sidebar = () => {
     const selectUser = useSelector((state) => state.userDetails.userDetails);
     const menuRolesList = selectUser?.menuRoles || [];
     const navigate = useNavigate();
-    // const logout = () => {
-    //     logoutFunction();
-    //     localStorage.clear();
-    //     sessionStorage.clear();
-    //     navigate('/login', { replace: true });
-    // };
-
+    
     const logout = async () => {
         try {
             await logoutFunction();
