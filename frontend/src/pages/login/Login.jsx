@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
+import { motion } from "motion/react"
 
 const Login = () => {
   const [loginCreds, setLoginCreds] = useState({
@@ -57,9 +58,17 @@ const Login = () => {
           <h1 className="text-4xl font-bold mb-4">
             Welcome to <img src={aashditLogo} alt="logo" className="inline-block w-40 ml-2" />
           </h1>
-          <p className="text-gray-300 leading-relaxed text-justify text-[14px]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.4,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+            className="text-gray-300 leading-relaxed text-justify text-[14px]"
+          >
             Today is full of opportunities to learn, grow, and succeed. Stay motivated and focused—this platform is here to help you work smarter and achieve your goals. <span className='block font-semibold text-[18px]'>Welcome back buddy!</span>
-          </p>
+          </motion.div>
         </div>
 
         <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl px-10 py-8 text-white w-full max-w-sm mx-auto md:mx-0">
