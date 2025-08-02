@@ -22,13 +22,14 @@ const SplitText = ({
   const ref = useRef(null);
   const animationCompletedRef = useRef(false);
   const scrollTriggerRef = useRef(null);
+  const splitterRef = useRef(null);
 
   useEffect(() => {
     if (typeof window === "undefined" || !ref.current || !text) return;
 
-    const el = ref.current;
-    animationCompletedRef.current = false;
+    if (animationCompletedRef.current) return;
 
+    const el = ref.current;
     const absoluteLines = splitType === "lines";
     if (absoluteLines) el.style.position = "relative";
 
@@ -39,6 +40,7 @@ const SplitText = ({
         absolute: absoluteLines,
         linesClass: "split-line",
       });
+      splitterRef.current = splitter;
     } catch (error) {
       console.error("Failed to create SplitText:", error);
       return;
@@ -114,22 +116,12 @@ const SplitText = ({
         scrollTriggerRef.current = null;
       }
       gsap.killTweensOf(targets);
-      if (splitter) {
-        splitter.revert();
+      if (splitterRef.current) {
+        splitterRef.current.revert();
+        splitterRef.current = null;
       }
     };
-  }, [
-    text,
-    delay,
-    duration,
-    ease,
-    splitType,
-    from,
-    to,
-    threshold,
-    rootMargin,
-    onLetterAnimationComplete,
-  ]);
+  }, []);
 
   return (
     <p
