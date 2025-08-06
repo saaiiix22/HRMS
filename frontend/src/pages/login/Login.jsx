@@ -59,10 +59,10 @@ const Login = () => {
           <h1 className="text-4xl font-bold mb-4">
             Welcome to <img src={aashditLogo} alt="logo" className="inline-block w-40 ml-2" />
           </h1>
-          <p>Today is full of opportunities to learn, grow, and succeed. Stay motivated and focused—this platform is here to help you work smarter and achieve your goals. </p>
+          <p> Wishing you a focused, productive, and fulfilling day ahead. Keep up the great work!</p>
           <span className='block font-semibold text-[18px]'>
             <SplitText
-              text="Welcome back buddy!"
+              text="Great to have you back with us!"
               splitType="chars"
               delay={40}
               className="font-bold"
