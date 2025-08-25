@@ -121,4 +121,4 @@ export const updateAddress = async(payload)=>{
     } catch (error) {
         throw error
     }
-}
+};
