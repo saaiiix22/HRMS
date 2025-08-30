@@ -100,7 +100,7 @@ export const dynamicMenu=async() =>{
     try {
         const res = await Api.get()
     } catch (error) {
-        
+        throw error
     }
 }
 // ! BIRTHDAY
